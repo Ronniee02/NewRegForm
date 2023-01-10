@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+   
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<h1 style = "text-align:center"> Student Registration Form</h1>
+@*<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <label for="fname">First Name:</label>
+        </div>
+        <div class="col-90">
+            <input type="text" id="fname" name="firstname" placeholder="Enter your first name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <label for="lname">Last Name:</label>
+        </div>
+        <div class="col-90">
+            <input type="text" id="lname" name="lastname" placeholder="Enter your last name">
+        </div>
+    </div>
+    <div class="row">
+        <input type="submit" value="Registered" onclick="save()">
+    </div>
+</div>
+
+
+
+<script>
+    function save() {
+        var text = document.getElementById("fname").value;
+        var text2 = document.getElementById("lname").value;
+       
+
+        text3 = (text +" "+ text2).replace(/\n/g, "\r\n");
+        /*text2 = text2.replace(/\n/g, "\r\n");*/
+      
+      
+        var blob = new Blob([text3],{ type: "text/plain" });
+        var anchor = document.createElement("a");
+        anchor.download = "keyboard_lexilogos.txt";
+        anchor.href = window.URL.createObjectURL(blob);
+        anchor.target = "_blank";
+        anchor.style.display = "none";
+        document.body.appendChild(anchor);
+        anchor.click();
+        document.body.removeChild(anchor);
+
+     }
+</script>*@

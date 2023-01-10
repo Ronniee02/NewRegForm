@@ -1,0 +1,319 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./responsiveRegistration.css">
+    <script type="text/javascript" lang="javascript" src="./responsiveRegistaration.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/Signup.css" />
+    <title>Signup</title>
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="ccontainer">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NewRegForm</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <h1>Student Registaration Form</h1>
+    
+        <div class="container">
+            <div class="'col-lg-8 m-auto d-block">
+                <form action="#" onsubmit="return validation()">
+                <div class="row">
+                    <div class="col-10">
+                        <label id="labname" for="fname">First Name:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="text" id="fname" name="firstname" class= "form-control" placeholder="Enter your first name">
+                        <span id="username" class="text-danger font-weight-bold"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <label id="lablastname" for="lname">Last Name:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="text" id="lname" name="lastname" class= "form-control" placeholder="Enter your last name">
+                        <span id="lastname" class="text-danger font-weight-bold"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-10">
+                        <label id="labemail" for="email">Email:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="email" id="email" name="email" class= "form-control" placeholder="valid email,.">
+                        <span id="Email" class="text-danger font-weight-bold"></span>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="col-10">
+                        <label for="mobile">Mobile:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="tel" id="mobile" name="mobile" class= "form-control" placeholder="only 10 digits are allowed">
+                        <span id="mobilenumber" class="text-danger font-weight-bold"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="gender" required>Gender:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="radio" id="g" name="gender" value="male" />Male
+                        <input type="radio" id="g" name="gender" value="female" />Female
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="dob">Date Of Birth:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="Date" id="dob" name="dob">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="address">Address:</label>
+                    </div>
+                    <div class="col-90">
+                        <textarea name="address" id="address" class= "form-control" cols="30" rows="10"></textarea>
+                        <span id="Address" class="text-danger font-weight-bold"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="city">City:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="text" id="city" name="city" class= "form-control" maxlength="10">
+                        <span id="City" class="text-danger font-weight-bold"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="pincode">Area PIN:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="number" id="pin" class= "form-control" name="pin" maxlength="6">
+                        <span id="Zipcode" class="text-danger font-weight-bold"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="state">State:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="text" id="state" class= "form-control" name="state">
+                        <span id="State" class="text-danger font-weight-bold"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="qualification" required>Qualification:</label>
+                    </div>
+                    <div class="col-90">
+                        <select name="qualification" id="qualification">
+                            <option value=" ">Select Qualification:</option>
+                            <option value="Graduation">Graduation</option>
+                            <option value="BTech.">BTech.</option>
+                            <option value="MTech.">MTech.</option>
+                            <option value="MCA">MCA</option>
+                            <option value="BCA">BCA</option>
+                        </select>
+                    </div>
+                </div>
+                @*<div class="row">
+                    <div class="col-10">
+                        <label for="specialization">Specialization:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="checkbox" class="specialization" id="c" name="specialization[]" value="Computer Science">Computer Science<br />
+                        <input type="checkbox" class="specialization" id="c" name="specialization[]" value="Information Technology">Information Technology<br />
+                        <input type="checkbox" class="specialization" id="c" name="specialization[]" value="Computer Architecture">Computer Architecture<br />
+                        <input type="checkbox" class="specialization" id="c" name="specialization[]" value="Tele Communication">Tele Communication<br />
+                    </div>
+                </div>*@
+                <div class="row">
+                    <div class="col-10">
+                        <label for="password">Password:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="password" id="password" name="password" class= "form-control" maxlength="8">
+                        <span id="Password" class="text-danger font-weight-bold"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" name="submit" value="submit" class="btn btn-success" onclick="save()">
+                    @*<button onclick="return check()" type="button">Check</button>*@
+                </div>
+                    </form>
+            </div>
+        </div>
+    <script type="text/javascript">
+        function validation() {
+            var name = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("mobile").value;
+            var address = document.getElementById("address").value;
+            var city = document.getElementById("city").value;
+            var pincode = document.getElementById("pin").value;
+            var state = document.getElementById("state").value;
+            var password = document.getElementById("password").value;
+
+
+            if (name == "") {
+                document.getElementById('username').innerHTML = "** Please fill the username field";
+                return false;
+            }
+            if (lname == "") {
+                document.getElementById('lastname').innerHTML = "** Please fill the lastname field";
+                return false;
+            }
+            if (email == "") {
+                document.getElementById('Email').innerHTML = "** Please fill the email field";
+                return false;
+            }
+            if (phone == "") {
+                document.getElementById('mobilenumber').innerHTML = "** Please fill the mobileno. field";
+                return false;
+            }
+            if (address == "") {
+                document.getElementById('Address').innerHTML = "** Please fill the address field";
+                return false;
+            }
+            if (city == "") {
+                document.getElementById('City').innerHTML = "** Please fill the city field";
+                return false;
+            }
+            if (pincode == "") {
+                document.getElementById('Zipcode').innerHTML = "** Please fill the pincode field";
+                return false;
+            }
+            if (state == "") {
+                document.getElementById('State').innerHTML = "** Please fill the state field";
+                return false;
+            }
+            if (password == "") {
+                document.getElementById('Password').innerHTML = "** Please fill the password field";
+                return false;
+            }
+        }
+    </script>
+    
+    <script src="~/js/downlaodIntxt.js"></script>
+    @*<script src="~/js/filled_or_Not.js"></script>*@
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*<a href="javascript:pdfexport();">Export PDF</a>*@
+
+    @*<script type="text/javascript" src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script>
+            function SaveStudentDetails() {
+                var /*ltitle = document.getElementById()*/
+                    FullName = document.getElementById('labname').innerText,
+                    LastName = document.getElementById('lablastname').innerText,
+                    Email = doucment.getElementById('labemail').innerText;
+
+                var fname = document.getElementById('fname').value,
+                    lname = document.getElementById('lname').value,
+                    email = doucment.getElementById('email').value;
+
+                var doc = new jsPDF();
+                doc.setFontsize(22);
+                /*doc.text(ltitle, 20, 20);*/
+                doc.setFontsize(16);
+                doc.text(FullName + ' ' + fname, 10, 20);
+                doc.text(LastName + ' ' + lname, 10, 30);
+                doc.text(Email + ' ' + email, 10, 20);
+                doc.Save(output.pdf);
+
+
+
+            }
+        </script>*@
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        //var form = document.getElementById('form')
+        //form.addEventListener('submit', function (event){
+        //    event.preventDefault()
+        //    var fname = document.getElementById('fname').value
+        //    var lname = document.getElementById('lname').value
+        //    var email = doucment.getElementById('email').value
+
+        //    var doc = new jsPDF()
+        //    doc.setFontSize(fname)
+        //    doc.text(lname, 20, 20)
+        //    doc.save(output.pdf)
+        //})
+
+
+
+    </script>-->
+
+
+</body>
+      
+</html>
